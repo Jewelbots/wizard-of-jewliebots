@@ -1,10 +1,8 @@
-# RFduino Blink Example
+# Wizard of Jewliebots
 
-This example demonstrates the [Cordova RFduino Plugin](https://github.com/don/cordova-plugin-rfduino) by causing an LED to blink on an RFDuino when the user initiates it from their iPhone. 
+##Based on the RFDuino Blink Example
 
-This code expects [the Blink Sketch](https://gist.github.com/SaraJo/11353238) to be running on the device. The latest RFduino Arduino and iOS code is available in the [zip file available from  RFduino](http://www.rfduino.com/download.html).
 
-These instructions assume you have Xcode 5 and [NodeJS](http://nodejs.org) installed on your system.
 
 Install Cordova
 
