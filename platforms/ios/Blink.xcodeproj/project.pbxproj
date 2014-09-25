@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -42,6 +41,9 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		938E286695794F1BB062E752 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78917AADBF842DA9D8B8566 /* CoreBluetooth.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		6B1B4520C05D48A99B39475A /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 3358ACEB7BA741BE9DD9EBC5 /* CDVNotification.m */; };
+		E9688105FA4F4A7BAF640C18 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E944B215462988B7B2B0 /* CDVNotification.bundle */; };
+		13B76787E2EC4D4E96FAF10E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD012B3D0F2461EB1B5AC7B /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,10 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Blink/config.xml; sourceTree = "<group>"; };
+		3358ACEB7BA741BE9DD9EBC5 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "org.apache.cordova.dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		50C08DE947874D458DA4FB2E /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "org.apache.cordova.dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4CF2E944B215462988B7B2B0 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
+		FCD012B3D0F2461EB1B5AC7B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				938E286695794F1BB062E752 /* CoreBluetooth.framework in Frameworks */,
+				13B76787E2EC4D4E96FAF10E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* Blink-Info.plist */,
+				4CF2E944B215462988B7B2B0 /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = Blink/Resources;
@@ -218,6 +226,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				E78917AADBF842DA9D8B8566 /* CoreBluetooth.framework */,
+				FCD012B3D0F2461EB1B5AC7B /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,6 +246,8 @@
 				E23EE93DF4B34A2F8A71D5EF /* CBPeripheral+Extensions.m */,
 				5B4E5621E1AF449CBC413DDB /* MEGRFduino.h */,
 				C074235FD69E476F8665F4CB /* CBPeripheral+Extensions.h */,
+				3358ACEB7BA741BE9DD9EBC5 /* CDVNotification.m */,
+				50C08DE947874D458DA4FB2E /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = Blink/Plugins;
@@ -405,6 +416,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				E9688105FA4F4A7BAF640C18 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +450,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				57318D49B85C40218BE41AEC /* MEGRFduino.m in Sources */,
 				600576AC4A124EF0B90D237F /* CBPeripheral+Extensions.m in Sources */,
+				6B1B4520C05D48A99B39475A /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

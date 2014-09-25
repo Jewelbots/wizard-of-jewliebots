@@ -19,6 +19,12 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
+    <feature name="RFduino">
+        <param name="ios-package" onload="true" value="MEGRFduino" />
+    </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
     <name>Blink</name>
     <description>
         A sample Apache Cordova application that blinks an LED connected to the RFDuino from the iPhone.
@@ -31,7 +37,4 @@
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <feature name="RFduino">
-        <param name="ios-package" onload="true" value="MEGRFduino" />
-    </feature>
 </widget>

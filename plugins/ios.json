@@ -12,6 +12,12 @@
                             "xml": "false",
                             "count": 1
                         }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -22,6 +28,12 @@
                             "xml": "<feature name=\"RFduino\"><param name=\"ios-package\" onload=\"true\" value=\"MEGRFduino\" /></feature>",
                             "count": 1
                         }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -29,6 +41,9 @@
     },
     "installed_plugins": {
         "com.megster.cordova.rfduino": {
+            "PACKAGE_NAME": "com.megster.rfduino.temp"
+        },
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.megster.rfduino.temp"
         }
     },

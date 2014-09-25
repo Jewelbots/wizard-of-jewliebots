@@ -58,12 +58,28 @@ var app = {
 
         rfduino.connect(uuid, onConnect, app.onError);
     },
+	   getColor: function() {
+			var colors = document.getElementsByName('colors');
+			var color;
+			for(var i = 0; i < colors.length; i++){
+				    if(colors[i].checked){
+							color = colors[i].value;
+						}
+			}
+		 return color;	
+		},
+	
     onData: function(data) {
-		var send = [3,9];
-										console.log(data);
-		rfduino.write(send, app.writeSuccess, app.onError);
+		var send = new Uint8Array(5);
+    var color = app.getColor();
+		send[0] = 3;
+	  send[1] = 2;
+	  send[2] = 1;
+		send[3] = 0;
+    send[4] = color;
+		rfduino.write("3", app.writeSuccess, app.onError);
 	},
-    disconnect: function() {
+	 	disconnect: function() {
         rfduino.disconnect(app.showMainPage, app.onError);
     },
     showMainPage: function() {
@@ -78,7 +94,7 @@ var app = {
         alert(reason); // real apps should use notification.alert
     },
 	writeSuccess: function(reason){
-		//alert("you've sent info" + reason);
+		alert("you've sent info" + reason);
 		//can use this to debog if you are having trouble sending
 	}	
 };
