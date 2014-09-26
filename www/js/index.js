@@ -72,12 +72,12 @@ var app = {
     onData: function(data) {
 		var send = new Uint8Array(5);
     var color = app.getColor();
-		send[0] = 3;
-	  send[1] = 2;
-	  send[2] = 1;
-		send[3] = 0;
+		send[0] = 0xFF;
+	  send[1] = 0x17;
+	  send[2] = 0x00;
+		send[3] = 2;
     send[4] = color;
-		rfduino.write("3", app.writeSuccess, app.onError);
+		rfduino.write(send.buffer, app.writeSuccess, app.onError);
 	},
 	 	disconnect: function() {
         rfduino.disconnect(app.showMainPage, app.onError);
