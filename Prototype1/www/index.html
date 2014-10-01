@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Wizard of Jewliebots</title>
     </head>
-    <body onload="app.initialize()">
+    <body>
         <div class="app">
             <h1>Wizard of Jewliebots</h1>
             <div id="mainPage">
@@ -23,10 +23,16 @@
 					 <input type="radio" name="colors" value="3" checked="checked">Red
 					 <input type="radio" name="colors" value="2">Blue
 					 <input type="radio" name="colors" value="1">Green 
-					 <button id="lightButton">Blink</button>
+							 <button id="lightButton">Blink</button>
             </div>            
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+								   window.onerror = function(message, url, lineNumber) {
+													         console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+																	     }
+								app.initialize();
+        </script>
     </body>
 </html>
