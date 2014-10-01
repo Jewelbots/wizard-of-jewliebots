@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5AA1E2F7-B349-4A7C-932E-762F83DB03B5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bracelet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B8FA6702-9A12-488F-B80E-86E4DAD37FE1</key>
+		<string>https://github.com/Jewliebots/wizard-of-jewliebots.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Prototype1/platforms/ios/Bracelet.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B8FA6702-9A12-488F-B80E-86E4DAD37FE1</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Jewliebots/wizard-of-jewliebots.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B8FA6702-9A12-488F-B80E-86E4DAD37FE1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B8FA6702-9A12-488F-B80E-86E4DAD37FE1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wizard-of-jewliebots</string>
+		</dict>
+	</array>
+</dict>
+</plist>
