@@ -11,6 +11,9 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 1.4em;
+    margin-top:30px;
+
 }
 
 button {
@@ -25,11 +28,15 @@ button {
 
 #detailPage {
     text-align:center;
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
-#detailPage button {
-    margin-top: 40px;
+#sendButton {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
     font-size: 0.6em; /* undo 2em from parent */
 }
 
@@ -46,4 +53,23 @@ li {
     min-height: 50px;
     border-top: 1px solid #d3d3d3;    
     font-size: 0.9em;
+}
+
+
+/*----------------------------LED---------------------------*/
+.dropdown{
+    display: block;
+    width: 100px;
+    margin:auto;
+}
+
+.label{
+    border-bottom: 1px solid #999;
+}
+
+.brightness{
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+
 }

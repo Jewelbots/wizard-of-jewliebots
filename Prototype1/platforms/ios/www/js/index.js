@@ -17,6 +17,7 @@
 /* global rfduino, alert */
 'use strict';
 
+var brightness = 100;
 
 var app = {
     initialize: function() {
@@ -26,7 +27,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
-        lightButton.addEventListener('touchstart', this.onData);
+        sendButton.addEventListener('touchstart', this.onData);
         deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
     },
     onDeviceReady: function() {
@@ -58,43 +59,72 @@ var app = {
 
         rfduino.connect(uuid, onConnect, app.onError);
     },
-	   getColor: function() {
-			var colors = document.getElementsByName('colors');
-			var color;
-			for(var i = 0; i < colors.length; i++){
-				    if(colors[i].checked){
-							color = colors[i].value;
-						}
-			}
-		 return color;	
-		},
+
+    getLED: function(){
+        var whichLED = document.getElementById('LED').value;
+        return whichLED;
+    },
+
+    getMode: function(){
+        var whichMode = document.getElementById('mode').value;
+        return whichMode;
+    },
+
+    getColor: function() {
+        var whichColor = document.getElementById('color').value;
+        return whichColor;			
+	},
+
+ 
 	
-    onData: function(data) {
-		var send = new Uint8Array(5);
-    var color = app.getColor();
-		send[0] = 0xFF;
-	  send[1] = 0x17;
-	  send[2] = 0x00;
-		send[3] = 2;
-    send[4] = color;
+    onData: function() {
+        var send = new Uint8Array(5);
+        var LED = app.getLED();
+        var color = app.getColor();
+        var mode = app.getMode();
+
+        send[0] = "0";
+        send[1] = brightness;
+        send[2] = mode;
+        send[3] = LED;
+        send[4] = color;
+		
 		rfduino.write(send.buffer, app.writeSuccess, app.onError);
 	},
-	 	disconnect: function() {
+
+	disconnect: function() {
         rfduino.disconnect(app.showMainPage, app.onError);
     },
+
     showMainPage: function() {
         mainPage.hidden = false;
         detailPage.hidden = true;
     },
     showDetailPage: function() {
-							mainPage.hidden = true;
+		mainPage.hidden = true;
         detailPage.hidden = false;
     },
     onError: function(reason) {
         alert(reason); // real apps should use notification.alert
+        app.showMainPage();
+
     },
 	writeSuccess: function(reason){
 		alert("you've sent info" + reason);
 		//can use this to debog if you are having trouble sending
 	}	
 };
+
+
+brightUP.addEventListener("touchstart", function(){
+    brightness+=10;
+    if(brightness>255)brightness = 255;
+    bright.innerHTML = brightness;
+});
+
+brightDOWN.addEventListener("touchstart", function(){
+    brightness-=10;
+    if(brightness<0)brightness = 0;
+    bright.innerHTML = brightness;
+});
+

@@ -20,19 +20,52 @@
                 <button id="refreshButton">Refresh</button>
             </div>
             <div id="detailPage">
-					 <input type="radio" name="colors" value="3" checked="checked">Red
-					 <input type="radio" name="colors" value="2">Blue
-					 <input type="radio" name="colors" value="1">Green 
-							 <button id="lightButton">Blink</button>
+                  <p class="label">Which Led?</p> 
+                  <select id="LED" class="dropdown">
+                      <option value="5">All</option>
+                      <option value="0">1</option>
+                      <option value="1">2</option>
+                      <option value="2">3</option>
+                      <option value="3">4</option>
+                      <option value="4">5</option>
+                   </select>
+ 
+
+                  <p class="label">Which Color?</p> 
+                  <select id="color" class="dropdown">
+                      <option value="0">White</option>
+                      <option value="1">Red</option>
+                      <option value="2">Green</option>
+                      <option value="3">Dark Blue</option>
+                      <option value="4">Light Blue</option>
+                      <option value="5">Yellow</option>
+                      <option value="6">Purple</option>
+                      <option value="7">Pink</option>
+                   </select>
+
+                  <p class="label">Which Pattern?</p> 
+                  <select id="mode" class="dropdown">
+                      <option value="0">Off</option>
+                      <option value="1">On</option>
+                      <option value="2">Blink Fast</option>
+                      <option value="3">Blink Slow</option>
+                      <option value="4">Loop</option>
+                   </select>  
+                    <p class="label">Brightness <span id="bright"></span>
+</p> 
+                    <button id="brightUP" class="brightness">+</button>
+                    <button id="brightDOWN" class="brightness">-</button>
+
+                    <button id="sendButton">Send</button>
+
             </div>            
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-								   window.onerror = function(message, url, lineNumber) {
-													         console.log("Error: "+message+" in "+url+" at line "+lineNumber);
-																	     }
-								app.initialize();
+		 window.onerror = function(message, url, lineNumber) {
+		 console.log("Error: "+message+" in "+url+" at line "+lineNumber);}
+		 app.initialize();
         </script>
     </body>
 </html>
