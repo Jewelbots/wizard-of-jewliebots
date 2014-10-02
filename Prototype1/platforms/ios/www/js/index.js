@@ -39,10 +39,9 @@ var app = {
     },
     onDiscoverDevice: function(device) {
         var listItem = document.createElement('li'),
-            html = '<b>' + device.name + '</b><br/>' +
-                'RSSI: ' + device.rssi + '&nbsp;|&nbsp;' +
-                'Advertising: ' + device.advertising + '<br/>' +
-                device.uuid;
+            html = '<b>Jewliebots version ' + device.name + '</b><br/>' +
+                device.uuid + '<br/>' +
+                "Click to connect to Jewelry";
 
         listItem.setAttribute('uuid', device.uuid);
         listItem.innerHTML = html;

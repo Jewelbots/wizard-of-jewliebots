@@ -7,9 +7,13 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(nLEDS, PIN, NEO_GRB + NEO_KHZ800);
 
 //variables for color
+int selectedLED;
 int red = 255;
 int green = 0; 
 int blue = 0;
+int brightness = 100;
+
+
 
 //variables for fading
 long speed;
@@ -42,66 +46,60 @@ void setup() {
 
   Serial.begin(9600);     
   RFduinoBLE.begin();
-  
+
 
   red = 255;
   blue = 0;
   green = 0;
+  selectedLED = nLEDS;
 }
 
 void loop(){
   checkButton();
-
+  Serial.println("working");
+  
   if(clickMode == 0){
-    Serial.println("mode 0");
-     off(nLEDS);
-}
-
+    off(selectedLED);
+  }
+  
   else if(clickMode == 1){
-      Serial.println("mode 1");
-     on(red, green,blue, nLEDS);
+    on(red, green,blue, selectedLED);
   }
 
   else if(clickMode == 2){
-      Serial.println("mode 2");
- blinkFast(red, green, blue, nLEDS);
+    blinkFast(red, green, blue, selectedLED);
 
   }
 
   else if(clickMode == 3){
-      Serial.println("mode 3");
-  blinkSlow(red, green, blue, nLEDS);
+    blinkSlow(red, green, blue, selectedLED);
 
   }  
-//  else if(clickMode == 4){
-//      Serial.println("mode 4");
-//  loopThroughLeds(red, green, blue);
-//  }
+  else if(clickMode == 4){
+     loopThroughLeds(red, green, blue);
+  }
 }
 
 void on(int r, int g, int b, int led){
-  tintPixels(r, g, b, 100, led);  
+  tintPixels(r, g, b, brightness, led);  
 }
 
 void off(int led){
-  tintPixels(0, 0, 0, 0, led);
+  tintPixels(255, 255, 255, 0, led);
 }
 
-void loopThroughLeds(int r, int g, int b){
-  tintPixels(r, g, b, 100, LEDindex);  
-  if(LEDindex == 0) off(nLEDS-1);  
-  else off(LEDindex-1);
-
-  counter++; 
-  if(counter > 1000) {
+void loopThroughLeds(int r, int g, int b){ 
+  if(counter > 50) {
     counter = 0;
+    off(nLEDS);  
     LEDindex++;
   }
 
-  if(LEDindex >= 5){
+  if(LEDindex > 4){
     LEDindex = 0;
   }
-
+  tintPixels(r, g, b, 100, LEDindex);  
+  counter++; 
 }
 
 void blinkFast(int r, int g, int b, int led){
@@ -118,13 +116,9 @@ void blinkSlow(int r, int g, int b, int led){
 
 void fadePixels(long speed, int r, int g, int b, int led){
   int previousAlpha = alpha;
-  alpha = 128+127*cos(2*PI/periode*speed);
-  tintPixels(r, g, b, alpha, led);
-}
-
-//function to change led colors, individual or all of them
-void tintPixels(int r, int g, int b, int a, int led){
-  strip.setBrightness(a);
+  alpha = brightness/2+(brightness/2+1)*cos(2*PI/periode*speed);
+  if(alpha <= 0)alpha = 1;
+  strip.setBrightness(alpha);
   if(led == nLEDS){
     for(uint16_t i=0; i<strip.numPixels(); i++) {
       uint32_t c = strip.Color(r, g, b);
@@ -134,6 +128,19 @@ void tintPixels(int r, int g, int b, int a, int led){
   else{
     strip.setPixelColor(led, strip.Color(r, g, b));
   }
+  strip.show();
+}
+
+//function to change led colors, individual or all of them
+void tintPixels(int r, int g, int b, int a, int led){
+  if(led == nLEDS){
+       for(uint16_t i=0; i<strip.numPixels(); i++) {
+           uint32_t c = strip.Color((a*r/255) , (a*g/255), (a*b/255));
+           strip.setPixelColor(i,c);
+       }
+   }else{
+       strip.setPixelColor(led, strip.Color((a*r/255) , (a*g/255), (a*b/255)));
+   }
   strip.show();
 }
 
@@ -149,6 +156,7 @@ void checkButton(){
       buttonStartTime = now;
       off(nLEDS);
       clickMode++;
+      Serial.println(clickMode);
       if(clickMode > 4) clickMode = 0; 
     }
   }  
@@ -168,50 +176,67 @@ void RFduinoBLE_onDisconnect()
 
 void RFduinoBLE_onReceive(char *data, int len)
 { 
-  for (int i = 0; i < len; i++) {
-    Serial.print(data[i], DEC);
-    Serial.print(" ");
-    Serial.print(data[i], HEX);
-    Serial.print(" ");
-    Serial.print(data[i], OCT);
-    Serial.print(" ");
-    Serial.println(data[i], BIN);
-    //  Values may not be printable chars
-    //    Serial.print(" ");
-    //    Serial.println(data[i]);
-  }
+    brightness = data[1];
+    clickMode = data[2];
+    selectedLED = data[3];
 
-  //turn off if flag is set to off
-  if(data[0] == 0){
+    
 
-    strip.begin();
-    strip.show();
-  }
 
-  //now set the color
-  if(data[4] == 1){
-     red = 255;
-     green = 0;
-     blue = 0;
-  }
-  else if(data[4] == 2){
-     red = 0;
-     green = 255;
-     blue = 0;  
-   }
-  else if(data[4] == 3){
-     red = 0;
-     green = 0;
-     blue = 255;
-   }
-  else if(data[4] == 4){
-    strip.setPixelColor(0, strip.Color(100, 0,100));
-  }
-  else{
-    //strip.setPixelColor(0, strip.Color(0,255,0));
-  }  
-  strip.show(); 
+    //now set the color
+    if(data[4] == 0){
+      red = 255;
+      green = 255;
+      blue = 255;
+    }
+    else if(data[4] == 1){
+      red = 255;
+      green = 0;
+      blue = 0;  
+    }
+    else if(data[4] == 2){
+      red = 0;
+      green = 255;
+      blue = 0;  
+    }  
+    else if(data[4] == 3){
+      red = 0;
+      green = 0;
+      blue = 255;
+    }
+
+    else if(data[4] == 3){
+      red = 0;
+      green = 0;
+      blue = 255;
+    }
+    else if(data[4] == 4){
+      red = 0;
+      green = 255;
+      blue = 255;  
+    }
+    else if(data[4] == 5){
+      red = 255;
+      green = 255;
+      blue = 0;
+    }
+    else if(data[4] == 6){
+      red = 140;
+      green = 0;
+      blue = 255;  
+    }
+    else if(data[4] == 7){
+      red = 255;
+      green = 0;
+      blue = 255;  
+    }
+   
+   
+   strip.show(); 
+  
+
 }
+
 
 
 
