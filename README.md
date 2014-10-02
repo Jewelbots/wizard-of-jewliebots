@@ -1,6 +1,6 @@
 # Wizard of Jewliebots
 
-##Based on the RFDuino Blink Example
+##Application lives in the Prototype1 Folder
 
 
 
@@ -10,7 +10,7 @@ Install Cordova
     
 Create the iOS project
 
-    $ cd cordova-plugin-rfduino/examples/blink
+    $ cd cordova-plugin-rfduino/examples/bracelet
     $ cordova platform add ios
 
 Install the rfduino plugin
@@ -19,11 +19,11 @@ Install the rfduino plugin
     
 Use Xcode to install the application on your iOS device
 
-    $ open platforms/ios/Blink.xcodeproj
+    $ open platforms/ios/Bracelet.xcodeproj
     
 Works on Android 4.3+ too
 
-    $ cd cordova-plugin-rfduino/examples/blink
+    $ cd cordova-plugin-rfduino/examples/bracelet
     $ cordova platform add android
     $ cordova plugin add com.megster.cordova.rfduino
     $ cordova run

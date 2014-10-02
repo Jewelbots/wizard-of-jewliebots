@@ -1,1 +1,36 @@
-{"prepare_queue":{"installed":[],"uninstalled":[]},"config_munge":{"framework":{"CoreBluetooth.framework":{"false":1}},"config.xml":{"/widget":{"<feature name=\"RFduino\"><param name=\"ios-package\" onload=\"true\" value=\"MEGRFduino\" /></feature>":1}}},"installed_plugins":{"com.megster.cordova.rfduino":{"PACKAGE_NAME":"com.jewliebots.bracelet"}},"dependent_plugins":{}}
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "CoreBluetooth.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"RFduino\"><param name=\"ios-package\" onload=\"true\" value=\"MEGRFduino\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.megster.cordova.rfduino": {
+            "PACKAGE_NAME": "com.jewliebots.bracelet"
+        }
+    },
+    "dependent_plugins": {}
+}
