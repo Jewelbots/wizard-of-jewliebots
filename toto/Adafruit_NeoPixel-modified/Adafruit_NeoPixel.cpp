@@ -140,13 +140,9 @@ void Adafruit_NeoPixel::show(void) {
 				" NOP\n\t" \
 				" NOP\n\t" \
 				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
 			); \
 		NRF_GPIO->OUTCLR = (1UL << pin); \
 		__ASM (  \
-				" NOP\n\t" \
-				" NOP\n\t" \
 				" NOP\n\t" \
 				" NOP\n\t" \
 				" NOP\n\t" \
@@ -180,14 +176,6 @@ void Adafruit_NeoPixel::show(void) {
 				" NOP\n\t" \
 				" NOP\n\t" \
 				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
-				" NOP\n\t" \
 			);
 
 
@@ -199,30 +187,11 @@ void Adafruit_NeoPixel::show(void) {
     while(p < end) {
 	checkRadio
      uint8_t pix = ~*p++;
+	 for(uint8_t mask = 0x80; mask; mask >>=1){
 	  	NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x80) {KHZ800_ZERO}
+		if (pix & mask) {KHZ800_ZERO}
 		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-        	if (pix & 0x40) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x20) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x10) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x08) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x04) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x02) {KHZ800_ZERO}
-		else {KHZ800_ONE}
-		NRF_GPIO->OUTSET = (1UL << pin);
-		if (pix & 0x01) {KHZ800_ZERO}
-		else {KHZ800_ONE}
+		}
       }
 #ifdef NEO_KHZ400
  } else { // 400 kHz bitstream
