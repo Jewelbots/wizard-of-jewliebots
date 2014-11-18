@@ -9,7 +9,21 @@ Button button(BUTTON_PIN);
 // HeartBeat red(RED_PIN);
 
 void setup() {
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+}
 
+bool red = false;
+bool green = false;
+
+void toggleRed(){
+  red = !red;
+  digitalWrite(RED_PIN, red);
+}
+
+void toggleGreen(){
+  green = !green;
+  digitalWrite(GREEN_PIN, green);
 }
 
 void loop() {
@@ -17,11 +31,11 @@ void loop() {
   button.tick();
 
   if (button.shortPress()){
-    // something
+    digitalWrite(RED_PIN, HIGH);
   }
 
   if (button.longPress()){
-    // something
+    digitalWrite(GREEN_PIN, HIGH);
   }
 
 //  radio.tick();
