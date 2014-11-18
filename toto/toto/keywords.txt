@@ -1,0 +1,4 @@
+Button	KEYWORD1
+tick	KEYWORD2
+shortPress	KEYWORD2
+longPress	KEYWORD2
