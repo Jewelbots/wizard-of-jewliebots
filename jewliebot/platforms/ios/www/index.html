@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Wizard of Jewliebots</title>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Wizard of Jewliebots</h1>
+      <div id="mainPage">
+          <ul id="deviceList">
+          </ul>
+          <button id="refreshButton">Refresh</button>
+      </div>
+      <div id="wizardPageOne">
+        <p>I want to...</p>
+        <button id="makeRecipeButton">Make a recipe &gt;</button>
+        <button id="detailPageButton">Set some lights &gt;</button>
+      </div>
+      <div id="proximityRecipePageOne">
+        <p>Make a recipe</p>
+        <h3>IF I AM NEAR...</h3>
+        Person Person Person
+      </div>
+      <div id="detailPage">
+        <p class="label">Which Led?</p>
+        <select id="LED" class="dropdown">
+          <option value="5">All</option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+        </select>
+
+        <p class="label">Which Color?</p>
+        <select id="color" class="dropdown">
+          <option value="0">White</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Dark Blue</option>
+          <option value="4">Light Blue</option>
+          <option value="5">Yellow</option>
+          <option value="6">Purple</option>
+          <option value="7">Pink</option>
+        </select>
+
+        <p class="label">Which Pattern?</p>
+        <select id="mode" class="dropdown">
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Blink Fast</option>
+          <option value="3">Blink Slow</option>
+          <option value="4">Loop</option>
+        </select>
+        <p class="label">Brightness <span id="bright">100</span></p>
+        <button id="brightUP" class="brightness">+</button>
+        <button id="brightDOWN" class="brightness">-</button>
+        <button id="sendButton">Send</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+      window.onerror = function(message, url, lineNumber) {
+        console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+      }
+      app.initialize();
+    </script>
+  </body>
+</html>
