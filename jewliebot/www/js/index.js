@@ -150,7 +150,7 @@ var app = {
   },
 
   bindProximityFriends: function() {
-    $(".js-proximity-friend").on('touchstart', function() {
+    $(".js-proximity-friend").on('tap', function() {
       app.showPage(proximityRecipeSet);
       $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
       console.log($("#nearName").data("deviceid"));

@@ -32,24 +32,32 @@
       <div id="proximityRecipePageOne">
         <p>Make a recipe</p>
         <h3>IF I AM NEAR...</h3>
-        <table>
-          <tr>
-            <td><img class="js-proximity-friend" data-name="Steven" data-deviceid="001" id="guyFriend" src="images/guy.png"></img><br>Steven</td>
-            <td><img class="js-proximity-friend" data-name="Kim" data-deviceid="002" id="girlFriend" src="images/lady.png"></img><br>Kim</td>
-          </tr>
-        </table>
+        <div data-role="content">
+          <ul data-role="listview" data-inset="true">
+            <li>
+              <img class="js-proximity-friend" data-name="Steven" data-deviceid="001" id="guyFriend" src="images/guy.png">
+              <p>Steven</p>
+            </li>
+            <li>
+              <img class="js-proximity-friend" data-name="Kim" data-deviceid="002" id="girlFriend" src="images/lady.png">
+              <p>Kim</p>
+            </li>
+          </ul>
+        </div>
       </div>
       <div id="proximityRecipeSet">
-        <p>Make recipe: IF I AM NEAR <span id="nearName"></span></p>
-        <p>Select Charm(s)</p>
-        <ul class="charmlist">
-          <li data-charmid="5" class="js-pr-charm">All</li>
-          <li data-charmid="0" class="js-pr-charm">1</li>
-          <li data-charmid="1" class="js-pr-charm">2</li>
-          <li data-charmid="2" class="js-pr-charm">3</li>
-          <li data-charmid="3" class="js-pr-charm">4</li>
-          <li data-charmid="4" class="js-pr-charm">5</li>
-        </ul>
+        <h3>Make recipe: IF I AM NEAR <span id="nearName"></span></h3>
+        <p><strong>Select Charm(s)</strong></p>
+        <div data-role="content">
+          <ul data-role="listview" data-inset="true" data-split-icon="gear">
+            <li><a href="#">All</a> <a href="#" data-charmid="5" class="js-pr-charm"></a></li>
+            <li><a href="#">1</a> <a href="#" data-charmid="0" class="js-pr-charm"></a></li>
+            <li><a href="#">2</a> <a href="#" data-charmid="1" class="js-pr-charm"></a></li>
+            <li><a href="#">3</a> <a href="#" data-charmid="2" class="js-pr-charm"></a></li>
+            <li><a href="#">4</a> <a href="#" data-charmid="3" class="js-pr-charm"></a></li>
+            <li><a href="#">5</a> <a href="#" data-charmid="4" class="js-pr-charm"></a></li>
+          </ul>
+        </div>
         <button class="js-finished">Finished</button>
       </div>
       <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
