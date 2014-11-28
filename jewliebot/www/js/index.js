@@ -138,6 +138,10 @@ detailPageButton.addEventListener("touchstart", function() {
   app.showPage(detailPage);
 });
 
+finishButton.addEventListener("touchstart", function() {
+  app.showPage(mainPage);
+});
+
 brightUP.addEventListener("touchstart", function(){
     brightness+=10;
     if(brightness>255)brightness = 255;
