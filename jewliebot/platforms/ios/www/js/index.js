@@ -32,6 +32,10 @@ var app = {
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
       app.bindProximityFriends();
       app.bindProximityRecipePopup();
+
+      $('.js-finished').on('touchstart', function() {
+        app.showPage(mainPage);
+      });
   },
 
   onDeviceReady: function() {
@@ -108,8 +112,8 @@ var app = {
     send[3] = led;
     send[4] = color;
 
-    console.log(send.buffer);
     rfduino.write(send.buffer, app.writeSuccess, app.onError);
+    //close the popup
     $('#prCharmSetPopup').popup('close');
   },
 

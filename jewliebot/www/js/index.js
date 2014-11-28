@@ -32,6 +32,10 @@ var app = {
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
       app.bindProximityFriends();
       app.bindProximityRecipePopup();
+
+      $('.js-finished').on('touchstart', function() {
+        app.showPage(mainPage);
+      });
   },
 
   onDeviceReady: function() {
