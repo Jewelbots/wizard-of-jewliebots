@@ -9,6 +9,11 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="lib/jquery/jquery.mobile-1.4.5.min.css" />
+
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery.mobile-1.4.5.min.js"></script>
+
     <title>Wizard of Jewliebots</title>
   </head>
   <body>
@@ -29,10 +34,14 @@
         <h3>IF I AM NEAR...</h3>
         <table>
           <tr>
-            <td><img id="guyFriend" src="images/guy.png"></img><br>Steven</td>
-            <td><img id="girlFriend" src="images/lady.png"></img><br>Kim</td>
+            <td><img class="js-proximity-friend" data-name="Steven" data-deviceid="001" id="guyFriend" src="images/guy.png"></img><br>Steven</td>
+            <td><img class="js-proximity-friend" data-name="Kim" data-deviceid="002" id="girlFriend" src="images/lady.png"></img><br>Kim</td>
           </tr>
         </table>
+      </div>
+      <div id="proximityRecipeSet">
+        <h3>IF I AM NEAR <span id="nearName"></span></h3>
+        
       </div>
       <div id="detailPage">
         <p class="label">Which Led?</p>
@@ -69,6 +78,7 @@
         <button id="brightUP" class="brightness">+</button>
         <button id="brightDOWN" class="brightness">-</button>
         <button id="sendButton">Send</button>
+        <button id="finishButton">Finish</button>
       </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>

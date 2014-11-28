@@ -22,9 +22,7 @@ var brightness = 100;
 var app = {
   initialize: function() {
       this.bindEvents();
-      detailPage.hidden = true;
-      proximityRecipePageOne.hidden = true;
-      wizardPageOne.hidden = true;
+      this.showPage(mainPage);
   },
 
   bindEvents: function() {
@@ -32,6 +30,7 @@ var app = {
       refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
       sendButton.addEventListener('touchstart', this.onData);
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
+      app.bindProximityFriends();
   },
 
   onDeviceReady: function() {
@@ -123,6 +122,15 @@ var app = {
     detailPage.hidden = true;
     wizardPageOne.hidden = true;
     proximityRecipePageOne.hidden = true;
+    proximityRecipeSet.hidden = true;
+  },
+
+  bindProximityFriends: function() {
+    $(".js-proximity-friend").on('touchstart', function() {
+      app.showPage(proximityRecipeSet);
+      $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
+      console.log($("#nearName").data("deviceid"));
+    });
   }
 };
 
