@@ -220,7 +220,7 @@ detailPageButton.addEventListener("touchstart", function() {
 });
 
 finishButton.addEventListener("touchstart", function() {
-  app.showPage(mainPage);
+  app.showPage(wizardPageOne);
 });
 
 brightUP.addEventListener("touchstart", function(){
