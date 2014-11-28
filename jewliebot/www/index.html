@@ -50,14 +50,31 @@
           <li data-charmid="3" class="js-pr-charm">4</li>
           <li data-charmid="4" class="js-pr-charm">5</li>
         </ul>
-        <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all">
+        <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
           <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
           <div style="padding:10px 20px;">
-            <label for="un" class="ui-hidden-accessible">Color:</label>
-            <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
-            <label for="pw" class="ui-hidden-accessible">Password:</label>
-            <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
-            <button id="sendRecipe" data-icon="check">Send</button>
+            <label for="prColor" class="ui-hidden-accessible">Color:</label>
+            <select id="prColor" class="dropdown">
+              <option value="0">White</option>
+              <option value="1">Red</option>
+              <option value="2">Green</option>
+              <option value="3">Dark Blue</option>
+              <option value="4">Light Blue</option>
+              <option value="5">Yellow</option>
+              <option value="6">Purple</option>
+              <option value="7">Pink</option>
+            </select>
+            <label for="prEffect" class="ui-hidden-accessible">Effect:</label>
+            <select id="prEffect" class="dropdown">
+              <option value="0">Off</option>
+              <option value="1">On</option>
+              <option value="2">Blink Fast</option>
+              <option value="3">Blink Slow</option>
+              <option value="4">Loop</option>
+            </select>
+            <span>Glow:</span>
+            <input type="range" id="prGlow" value="100" min="0" max="255" step="10">
+            <button id="sendRecipe" data-icon="check">Save</button>
           </div>
         </div>
       </div>

@@ -94,6 +94,25 @@ var app = {
     rfduino.write(send.buffer, app.writeSuccess, app.onError);
   },
 
+  sendProximityRecipe: function() {
+    //TODO: this will need to match what to send the device
+    var send = new Uint8Array(5);
+    var led = $('#prCharmSetPopup').data('charmid');
+    var color = $('#prColor').val();
+    var effect = $('#prEffect').val();
+    var bright = $('#prGlow').val();
+
+    send[0] = "0";
+    send[1] = bright;
+    send[2] = effect;
+    send[3] = led;
+    send[4] = color;
+
+    console.log(send.buffer);
+    rfduino.write(send.buffer, app.writeSuccess, app.onError);
+    $('#prCharmSetPopup').popup('close');
+  },
+
   disconnect: function() {
     rfduino.disconnect(app.showMainPage, app.onError);
   },
@@ -136,10 +155,16 @@ var app = {
 
   bindProximityRecipePopup: function() {
     $('.js-pr-charm').on('touchstart', function() {
-      console.log("hi");
-      $('#prCharmSetPopup').popup('open');
+      $('#prCharmSetPopup').popup('open', { shadow: true});
+      $('#prCharmSetPopup').data("charmid", $(this).data("charmid"));
       return false;
     });
+    $('#prCharmSetPopup').on('popupafterclose', function(event, ui) {
+      $(this).removeAttr('data-charmid');
+      $(this).removeData('data-charmid');
+    });
+    //bind send on popup
+    sendRecipe.addEventListener("touchstart", app.sendProximityRecipe);
   }
 };
 
