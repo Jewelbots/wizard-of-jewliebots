@@ -31,6 +31,7 @@ var app = {
       sendButton.addEventListener('touchstart', this.onData);
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
       app.bindProximityFriends();
+      app.bindProximityRecipePopup();
   },
 
   onDeviceReady: function() {
@@ -130,6 +131,14 @@ var app = {
       app.showPage(proximityRecipeSet);
       $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
       console.log($("#nearName").data("deviceid"));
+    });
+  },
+
+  bindProximityRecipePopup: function() {
+    $('.js-pr-charm').on('touchstart', function() {
+      console.log("hi");
+      $('#prCharmSetPopup').popup('open');
+      return false;
     });
   }
 };

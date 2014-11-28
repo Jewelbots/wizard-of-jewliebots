@@ -41,7 +41,25 @@
       </div>
       <div id="proximityRecipeSet">
         <h3>IF I AM NEAR <span id="nearName"></span></h3>
-        
+        <h3>SELECT CHARM(S)</h3>
+        <ul>
+          <li data-charmid="5" class="js-pr-charm">All</li>
+          <li data-charmid="0" class="js-pr-charm">1</li>
+          <li data-charmid="1" class="js-pr-charm">2</li>
+          <li data-charmid="2" class="js-pr-charm">3</li>
+          <li data-charmid="3" class="js-pr-charm">4</li>
+          <li data-charmid="4" class="js-pr-charm">5</li>
+        </ul>
+        <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all">
+          <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+          <div style="padding:10px 20px;">
+            <label for="un" class="ui-hidden-accessible">Username:</label>
+            <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">Password:</label>
+            <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+            <button id="sendRecipe" data-icon="check">Send</button>
+          </div>
+        </div>
       </div>
       <div id="detailPage">
         <p class="label">Which Led?</p>
