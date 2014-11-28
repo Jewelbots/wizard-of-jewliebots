@@ -58,11 +58,9 @@ var app = {
     //console.log(e);
     var uuid = e.target.getAttribute('uuid');
     var onConnect = function() {
-        rfduino.onData(app.onData, app.onError);
-        //app.showDetailPage();
-        app.showMakeRecipePage();
-      };
-
+      rfduino.onData(app.onData, app.onError);
+      app.showPage(wizardPageOne);
+    };
     rfduino.connect(uuid, onConnect, app.onError);
   },
 
@@ -100,52 +98,44 @@ var app = {
     rfduino.disconnect(app.showMainPage, app.onError);
   },
 
-  showMainPage: function() {
-      mainPage.hidden = false;
-      detailPage.hidden = true;
-      wizardPageOne.hidden = true;
-      proximityRecipePageOne.hidden = true;
-  },
-
-  showDetailPage: function() {
-    mainPage.hidden = true;
-    detailPage.hidden = false;
-    wizardPageOne.hidden = true;
-    proximityRecipePageOne.hidden = true;
-  },
-
-  showMakeRecipePage: function() {
-    mainPage.hidden = true;
-    detailPage.hidden = true;
-    wizardPageOne.hidden = false;
-    proximityRecipePageOne.hidden = true;
-  },
-
-  showProximityRecipePageOne: function() {
-    proximityRecipePageOne.hidden = false;
-    mainPage.hidden = true;
-    detailPage.hidden = true;
-    wizardPageOne.hidden = true;
-  },
-
   onError: function(reason) {
     console.log("Error: " + reason);
-    //alert(reason); // real apps should use notification.alert
-    //app.showMainPage();
+    //it's throwing a lot of errors with null reason that don't really appear to be errors?
+    if(reason !== null) {
+      alert(reason);
+      app.showPage(mainPage);
+    }
   },
 
   writeSuccess: function(reason){
-    alert("you've sent info" + reason);
+    alert("you've sent info " + reason);
     //can use this to debog if you are having trouble sending
+  },
+
+  showPage: function(pageName) {
+    //naive controller, when this gets more complicated than two recipes, think about a MVC fx
+    app.hideAll();
+    pageName.hidden = false;
+  },
+
+  hideAll: function() {
+    mainPage.hidden = true;
+    detailPage.hidden = true;
+    wizardPageOne.hidden = true;
+    proximityRecipePageOne.hidden = true;
   }
 };
 
+headerHome.addEventListener("touchstart", function() {
+  app.showPage(mainPage);
+});
+
 makeRecipeButton.addEventListener("touchstart", function() {
-  app.showProximityRecipePageOne();
+  app.showPage(proximityRecipePageOne);
 });
 
 detailPageButton.addEventListener("touchstart", function() {
-  app.showDetailPage();
+  app.showPage(detailPage);
 });
 
 brightUP.addEventListener("touchstart", function(){
