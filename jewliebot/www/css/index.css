@@ -40,6 +40,15 @@ button {
     font-size: 0.6em; /* undo 2em from parent */
 }
 
+#friendsTable {
+  text-align: center;
+  margin: auto;
+}
+
+#friendsTable td {
+  padding: 15px;
+}
+
 ul {
     list-style: none;
     border-bottom: 1px solid #d3d3d3;

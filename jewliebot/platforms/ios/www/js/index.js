@@ -19,6 +19,18 @@
 
 var brightness = 100;
 
+// create the friends in absence of a data source
+var friends = [
+  { name: "Steven",
+    deviceId: "001",
+    avatar: "images/guy.png"
+  },
+  { name: "Kim",
+    deviceId: "002",
+    avatar: "images/lady.png"
+  },
+];
+
 var app = {
   initialize: function() {
       this.bindEvents();
@@ -30,7 +42,7 @@ var app = {
       refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
       sendButton.addEventListener('touchstart', this.onData);
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
-      app.bindProximityFriends();
+      //app.bindProximityFriends();
       app.bindProximityRecipePopup();
 
       $('.js-finished').on('touchstart', function() {
@@ -100,6 +112,7 @@ var app = {
 
   sendProximityRecipe: function() {
     //TODO: this will need to match what to send the device
+    //for right now it's just doing the one-time send
     var send = new Uint8Array(5);
     var led = $('#prCharmSetPopup').data('charmid');
     var color = $('#prColor').val();
@@ -149,8 +162,28 @@ var app = {
     proximityRecipeSet.hidden = true;
   },
 
+  createFriendsList: function(friends) {
+    var friendsList = "<tr>";
+    for(var i=0;i<friends.length;i++){
+      var friend = friends[i];
+      //var friendItem = '<li class="js-proximity-friend" data-name="' + friend.name + '" data-deviceid="' + friend.deviceId + '">';
+      //friendItem += '<img src="' + friend.avatar + '"></img><strong>' + friend.name + '</strong></li>';
+      //friendsList += friendItem;
+      if((i)%3 === 0) {
+        friendsList += "<tr>";
+      }
+      var friendData = '<td><img src="' + friend.avatar + '" class="js-proximity-friend" data-name="' + friend.name + '" data-deviceid="' + friend.deviceId + '"></img><h3>' + friend.name + '</h3></td>';
+      if((i+1)%3 === 0) {
+        friendData += "</tr>";
+      }
+      friendsList += friendData;
+    }
+    $("#friendsTable").html(friendsList);
+    app.bindProximityFriends();
+  },
+
   bindProximityFriends: function() {
-    $(".js-proximity-friend").on('tap', function() {
+    $(".js-proximity-friend").on('touchstart', function() {
       app.showPage(proximityRecipeSet);
       $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
       console.log($("#nearName").data("deviceid"));
@@ -177,6 +210,8 @@ headerHome.addEventListener("touchstart", function() {
 });
 
 makeRecipeButton.addEventListener("touchstart", function() {
+  console.log(friends);
+  app.createFriendsList(friends);
   app.showPage(proximityRecipePageOne);
 });
 
