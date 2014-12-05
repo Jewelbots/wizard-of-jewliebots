@@ -1,0 +1,266 @@
+/* ==========================================================================
+	#Reset
+========================================================================== */
+
+* { margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: transparent; }
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+/* ==========================================================================
+	#Global
+========================================================================== */
+
+body,
+html { height: 100%; }
+
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	line-height: 1.33;
+	color: #333;
+	font-weight: 400; 
+	font-style: normal; 
+	text-transform: none; 
+	text-decoration: none; 
+	text-shadow: none; 
+	letter-spacing: 0;
+	word-spacing: 0;
+	text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #fff;
+	min-width: 100%;
+}
+
+a { color: #0fb48c; text-decoration: none; }
+a:hover,
+a:active,
+a:focus { text-decoration: underline; }
+a:focus { outline: 0; }
+a[href^="tel"],
+a[href^="tel"]:hover,
+a[href^="tel"]:active,
+a[href^="tel"]:focus { color: inherit; text-decoration: none; cursor: default; }
+a img { vertical-align: middle; }
+
+a img,
+table, 
+iframe,
+fieldset { border: 0 none; }
+
+img,
+iframe,
+video,
+audio,
+object { max-width: 100%; }
+
+img { height: auto; }
+
+a,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button { cursor: pointer; }
+
+sup,
+sub { line-height: 1; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main { display: block; }
+
+ul,
+ol { list-style-position: inside; }
+
+nav ul,
+[class^="list-"] { list-style: none outside none; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+/* ==========================================================================
+	#Form Elements
+========================================================================== */
+
+::-webkit-input-placeholder { color: #a2a2a2; opacity: 1; }
+:-moz-placeholder { color: #a2a2a2; opacity: 1; }
+::-moz-placeholder { color: #a2a2a2; opacity: 1; }
+:-ms-input-placeholder { color: #a2a2a2; opacity: 1; }
+
+input,
+textarea,
+select,
+button { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a2a2a2; font-weight: 400; display: block; width: 100%; height: 40px; padding: 10px; border: 0 none; background: #dfdfdf; border-radius: 0; box-shadow: none; }
+
+input:focus,
+textarea:focus { outline: 0 none; }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button { width: auto; height: auto; }
+
+input[type="hidden"],
+.hidden { display: none; }
+
+input,
+textarea,
+button,
+a[href^="tel"] { -webkit-appearance: none; -moz-appearance: none; }
+
+input[type="checkbox"] { -webkit-appearance: checkbox; -moz-appearance: checkbox; }
+input[type="radio"] { -webkit-appearance: radio; -moz-appearance: radio; }
+
+input[type="radio"],
+input[type="checkbox"] { width: auto; height: auto; padding: 0; border: 0; }
+
+textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolling: touch; }
+
+/* ==========================================================================
+	#Helpers
+========================================================================== */
+
+.notext,
+[class^="ico-"] { font-size: 0; line-height: 0; text-indent: -4000px; }
+
+.alignleft { float: left; }
+
+.alignright { float: right; }
+
+.cf:before,
+.cf:after { content: ''; line-height: 0; display: table; }
+.cf:after { clear: both; }
+
+/* ==========================================================================
+	#Buttons & Icons
+========================================================================== */
+
+[class^="btn-"],
+[class^="ico-"] { display: inline-block; vertical-align: middle; }
+
+/* Buttons */
+
+[class^="btn-"] { font-size: 12px; line-height: 20px; color: #fff; text-transform: uppercase; font-weight: 600; position: relative; padding: 5px 20px; border: 0; border-radius: 15px; -webkit-border-radius: 15px; }
+[class^="btn-"]:hover,
+[class^="btn-"]:active,
+[class^="btn-"]:focus { outline: 0; }
+[class^="btn-"] [class^="ico-"] { position: absolute; top: 50%; right: 20px; }
+[class^="btn-"] [class^="ico-"] {
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%); 
+	-moz-transform: translateY(-50%); 
+	-o-transform: translateY(-50%); 
+	-ms-transform: translateY(-50%); 
+}
+
+.btn-green { background-color: #0fb48c; }
+
+.btn-lightgreen { color: #0fb48c; background-color: #bfe4e1; }
+
+.btn-orange { background-color: #f9b474; }
+
+.btn-large { padding: 10px 20px; min-width: 160px; border-radius: 20px; -webkit-border-radius: 20px; }
+
+/* Icons */
+
+[class^="ico-"],
+.logo { background-color: transparent; background-repeat: no-repeat; background-position: 0 0; background-size: 100% 100%; -webkit-background-size: 100% 100%; }
+
+.ico-next { width: 13px; height: 11px; background-image: url(images/ico-forward.png); }
+
+/* ==========================================================================
+	#Pages Styles
+========================================================================== */
+
+.header { padding: 7px 0; position: relative; z-index: 10; }
+.header .logo { width: 90px; height: 35px; display: block; margin: 0 auto; background-image: url(images/logo.png); }
+.header .back,
+.header .bars { width: 45px; height: 49px; display: block; position: absolute; top: 0; background-repeat: no-repeat; background-position: 50% 50%; }
+.header .back { left: 0; background-image: url(images/ico-back.png); background-size: 13px 11px; -webkit-background-size: 13px 11px; }
+.header .bars { right: 0; background-image: url(images/ico-bars.png); background-size: 15px 11px; -webkit-background-size: 15px 11px; }
+
+.main-head,
+.section-friends .section-foot { padding: 13px 15px 10px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background: #ebf0f5 url(images/shape1.png) no-repeat 15% 0; background-size: 257px 570px; -webkit-background-size: 257px 570px; }
+.main-head h2 { font-size: 18px; line-height: 20px; font-weight: 400; padding-bottom: 15px; }
+.main-head p { font-size: 16px; line-height: 30px; font-weight: 600; width: 35px; float: left; }
+.main-head-inner { overflow: hidden; }
+.main-head-inner strong { font-size: 16px; font-weight: 600; text-transform: uppercase; text-decoration: underline; color: #0fb18f; display: inline-block; margin: 0 5px; position: relative; top: -2px; }
+.main-head-inner [class^="btn-"] { margin: 0 0 10px 5px; }
+
+.main-body { padding: 19px 15px 0; }
+.main-body .search { padding-bottom: 20px; }
+.main-body .search .field { padding-left: 30px; background-image: url(images/ico-search.png); background-repeat: no-repeat; background-position: 8px 50%; background-size: 14px 14px; -webkit-background-size: 14px 14px; }
+
+.section-friends .section-head { font-size: 12px; line-height: 20px; text-transform: uppercase; padding-bottom: 20px; }
+.section-friends .section-head p { float: left; }
+.section-friends .section-head p + p { float: right; }
+.section-friends .section-head p a { color: #333; font-weight: 600; text-decoration: underline; }
+.section-friends .section-head p a:hover,
+.section-friends .section-head p a:active,
+.section-friends .section-head p a:focus { text-decoration: none; }
+
+.list-friends { font-size: 10px; line-height: 20px; color: #262626; text-align: center; text-transform: uppercase; }
+.list-friends li { width: 33.33%; float: left; padding-bottom: 25px; }
+.list-friends li {
+	width: calc(100% / 3); 
+	width: -webkit-calc(100% / 3); 
+	width: -moz-calc(100% / 3); 
+	width: -o-calc(100% / 3); 
+	width: -ms-calc(100% / 3); 
+}
+.list-friends label { display: block; position: relative; overflow: hidden; padding-bottom: 5px; }
+.list-friends label img { width: 70px; height: 70px; display: block; margin: 0 auto; border-radius: 50%; }
+.list-friends label input { position: absolute; top: 0; left: -50px; }
+.list-friends label span { width: 20px; height: 20px; display: none; position: absolute; bottom: 0; left: 50%; margin-left: -10px; background: #22c064 url(images/ico-check.png) no-repeat 50% 50%; background-size: 8px 6px; -webkit-background-size: 8px 6px; border-radius: 50%; }
+.list-friends label input:checked + span { display: block; }
+.list-friends p { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+.section-friends .section-foot { text-align: center; padding: 20px 0 40px; margin: 0 -15px; background-position: 90% 37%; }
+
+.charm { height: 300px; padding: 30px 0; margin-bottom: 20px; position: relative; background: url(images/shape2.png) no-repeat 50% 50%; background-size: 220px 222px; -webkit-background-size: 220px 222px; }
+.charm .people { list-style: none outside none; }
+.charm li { width: 41px; height: 41px; position: absolute; left: 50%; }
+.charm li a { height: 41px; display: block; border: 3px solid #fff; background-color: #0fb18f; border-radius: 50%; }
+.charm li a.add-new { font-size: 38px; line-height: 33px; color: #fff; text-align: center; font-weight: 600; border-color: #0fb18f; }
+.charm li img { width: 35px; height: 35px; display: block; border-radius: 50%; }
+.charm .person1 { top: 20px; margin-left: -20px; }
+.charm .person2 { top: 53px; margin-left: 58px; }
+.charm .person3 { top: 125px; margin-left: 87px; }
+.charm .person4 { top: 205px; margin-left: 58px; }
+.charm .person5 { top: 239px; margin-left: -20px; }
+.charm .person6 { top: 205px; margin-left: -98px; }
+.charm .person7 { top: 125px; margin-left: -127px; }
+.charm .person8 { top: 53px; margin-left: -98px; }
+.charm-button { width: 80px; height: 80px; display: block; position: absolute; top: 50%; left: 50%; border: 5px solid #fff; margin: -40px 0 0 -40px; background-color: #f9b474; border-radius: 50%; }
+
+/* ==========================================================================
+	#CSS3 Animations, Transforms and Transitions
+========================================================================== */
+
+a,
+button,
+input,
+textarea,
+.btn { 
+	transition: color .5s, background-color .5s, border-color .5s; 
+	-webkit-transition: color .5s, background-color .5s, border-color .5s; 
+	-moz-transition: color .5s, background-color .5s, border-color .5s; 
+	-o-transition: color .5s, background-color .5s, border-color .5s; 
+	-ms-transition: color .5s, background-color .5s, border-color .5s; 
+}

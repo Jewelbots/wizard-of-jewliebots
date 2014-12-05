@@ -21,13 +21,21 @@ var brightness = 100;
 
 // create the friends in absence of a data source
 var friends = [
-  { name: "Steven",
+  { name: "Stacy Richards",
     deviceId: "001",
-    avatar: "images/guy.png"
+    avatar: "css/images/temp/avatar01.jpg"
   },
-  { name: "Kim",
+  { name: "Dennis Parker",
     deviceId: "002",
-    avatar: "images/lady.png"
+    avatar: "css/images/temp/avatar02.jpg"
+  },
+  { name: "Haley Peterson",
+    deviceId: "003",
+    avatar: "css/images/temp/avatar03.jpg"
+  },
+  { name: "Tom Ericson",
+    deviceId: "004",
+    avatar: "css/images/temp/avatar04.jpg"
   },
 ];
 
@@ -158,28 +166,16 @@ var app = {
     mainPage.hidden = true;
     detailPage.hidden = true;
     wizardPageOne.hidden = true;
-    proximityRecipePageOne.hidden = true;
+    proximityRecipeFriendPage.hidden = true;
     proximityRecipeSet.hidden = true;
   },
 
   createFriendsList: function(friends) {
-    var friendsList = "<tr>";
-    for(var i=0;i<friends.length;i++){
-      var friend = friends[i];
-      //var friendItem = '<li class="js-proximity-friend" data-name="' + friend.name + '" data-deviceid="' + friend.deviceId + '">';
-      //friendItem += '<img src="' + friend.avatar + '"></img><strong>' + friend.name + '</strong></li>';
-      //friendsList += friendItem;
-      if((i)%3 === 0) {
-        friendsList += "<tr>";
-      }
-      var friendData = '<td><img src="' + friend.avatar + '" class="js-proximity-friend" data-name="' + friend.name + '" data-deviceid="' + friend.deviceId + '"></img><h3>' + friend.name + '</h3></td>';
-      if((i+1)%3 === 0) {
-        friendData += "</tr>";
-      }
-      friendsList += friendData;
-    }
-    $("#friendsTable").html(friendsList);
+    var friendTpl = Handlebars.compile($("#friend-list-tpl").html());
+    var friendsList = friendTpl(friends);
+    $("#prFriendList").html(friendsList);
     app.bindProximityFriends();
+    $("#friendCount").text(friends.length);
   },
 
   bindProximityFriends: function() {
@@ -205,14 +201,10 @@ var app = {
   }
 };
 
-headerHome.addEventListener("touchstart", function() {
-  app.showPage(mainPage);
-});
-
 makeRecipeButton.addEventListener("touchstart", function() {
   console.log(friends);
   app.createFriendsList(friends);
-  app.showPage(proximityRecipePageOne);
+  app.showPage(proximityRecipeFriendPage);
 });
 
 detailPageButton.addEventListener("touchstart", function() {
