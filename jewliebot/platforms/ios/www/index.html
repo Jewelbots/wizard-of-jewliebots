@@ -19,7 +19,6 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <!--TODO: Wire this-->
         <a href="#" class="back"></a>
         <a href="#" class="logo"></a>
         <a href="#" class="bars"></a>
@@ -28,11 +27,16 @@
       <div class="main">
         <!--TODO: wire up header templates-->
         <div id="mainHeader" class="main-head cf">
-          <h2>Make a recipe:</h2>
-          <p>IF...</p>
-          <div class="main-head-inner">
-            <span class="btn-green">I Am Near...</span>
-          </div><!-- /.main-head-inner -->
+          <div id="recipeHeader">
+            <h2>Make a recipe:</h2>
+            <p>IF...</p>
+            <div class="main-head-inner">
+              <span id="recipeHeaderText" class="btn-green">I Am Near...</span>
+            </div><!-- /.main-head-inner -->
+          </div>
+          <div id="generalHeader">
+            <h2 id="generalHeaderText"></h2>
+          </div>
         </div><!-- /.main-head -->
 
         <div id="mainBody" class="main-body">
@@ -45,7 +49,6 @@
           </div>
           <div id="wizardPageOne">
             <!--page you get when you choose device-->
-            <p>I want to...</p>
             <button id="makeRecipeButton">Make a recipe &gt;</button>
             <button id="detailPageButton">Set some lights &gt;</button>
           </div>

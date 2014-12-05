@@ -43,6 +43,7 @@ var app = {
   initialize: function() {
       this.bindEvents();
       this.showPage(mainPage);
+      app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
   },
 
   bindEvents: function() {
@@ -50,12 +51,18 @@ var app = {
       refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
       sendButton.addEventListener('touchstart', this.onData);
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
-      //app.bindProximityFriends();
       app.bindProximityRecipePopup();
 
       $('.js-finished').on('touchstart', function() {
         app.showPage(mainPage);
+        app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
       });
+
+      $('.back').on('touchstart', function() {
+        app.showPage(mainPage);
+        app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+      });
+
   },
 
   onDeviceReady: function() {
@@ -84,6 +91,7 @@ var app = {
     var onConnect = function() {
       rfduino.onData(app.onData, app.onError);
       app.showPage(wizardPageOne);
+      app.showHeader(generalHeader, "I want to...", "#generalHeaderText");
     };
     rfduino.connect(uuid, onConnect, app.onError);
   },
@@ -148,12 +156,18 @@ var app = {
     if(reason !== null) {
       alert(reason);
       app.showPage(mainPage);
+      app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
     }
   },
 
   writeSuccess: function(reason){
     alert("you've sent info " + reason);
     //can use this to debog if you are having trouble sending
+  },
+
+  showHeader: function(headerName, text, control) {
+    $(control).text(text);
+    headerName.hidden = false;
   },
 
   showPage: function(pageName) {
@@ -168,6 +182,8 @@ var app = {
     wizardPageOne.hidden = true;
     proximityRecipeFriendPage.hidden = true;
     proximityRecipeSet.hidden = true;
+    generalHeader.hidden = true;
+    recipeHeader.hidden = true;
   },
 
   createFriendsList: function(friends) {
@@ -180,9 +196,9 @@ var app = {
 
   bindProximityFriends: function() {
     $(".js-proximity-friend").on('touchstart', function() {
-      app.showPage(proximityRecipeSet);
       $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
-      console.log($("#nearName").data("deviceid"));
+      app.showPage(proximityRecipeSet);
+      app.showHeader(recipeHeader, "TODO", "#recipeHeaderText");
     });
   },
 
@@ -205,6 +221,7 @@ makeRecipeButton.addEventListener("touchstart", function() {
   console.log(friends);
   app.createFriendsList(friends);
   app.showPage(proximityRecipeFriendPage);
+  app.showHeader(recipeHeader, "I Am Near...", "#recipeHeaderText");
 });
 
 detailPageButton.addEventListener("touchstart", function() {
