@@ -37,6 +37,14 @@ var friends = [
     deviceId: "004",
     avatar: "css/images/temp/avatar04.jpg"
   },
+  { name: "Erin Nelson",
+    deviceId: "005",
+    avatar: "css/images/temp/avatar05.jpg"
+  },
+  { name: "Irea Fitzgerald",
+    deviceId: "006",
+    avatar: "css/images/temp/avatar06.jpg"
+  },
 ];
 
 var app = {
