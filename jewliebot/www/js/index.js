@@ -184,6 +184,7 @@ var app = {
     proximityRecipeSet.hidden = true;
     generalHeader.hidden = true;
     recipeHeader.hidden = true;
+    proximityRecipeHeader.hidden = true;
   },
 
   createFriendsList: function(friends) {
@@ -196,9 +197,9 @@ var app = {
 
   bindProximityFriends: function() {
     $(".js-proximity-friend").on('touchstart', function() {
-      $('#nearName').text($(this).data("name")).data("deviceid", $(this).data("deviceid"));
+      $('#nearName').data("deviceid", $(this).data("deviceid"));
       app.showPage(proximityRecipeSet);
-      app.showHeader(recipeHeader, "TODO", "#recipeHeaderText");
+      app.showHeader(proximityRecipeHeader, "I Am Near " + $(this).data("name"), "#nearName");
     });
   },
 
