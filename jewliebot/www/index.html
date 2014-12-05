@@ -78,43 +78,36 @@
                       <img src="css/images/temp/avatar1.jpg" alt="" />
                     </a>
                   </li><!-- /.person1 -->
-
                   <li class="person2">
                     <a href="#">
                       <img src="css/images/temp/avatar2.jpg" alt="" />
                     </a>
                   </li><!-- /.person2 -->
-
                   <li class="person3">
                     <a href="#" class="add-new">
                       +
                     </a>
                   </li><!-- /.person3 -->
-
                   <li class="person4">
                     <a href="#">
                       <img src="css/images/temp/avatar3.jpg" alt="" />
                     </a>
                   </li><!-- /.person4 -->
-
                   <li class="person5">
                     <a href="#">
                       <img src="css/images/temp/avatar4.jpg" alt="" />
                     </a>
                   </li><!-- /.person5 -->
-
                   <li class="person6">
                     <a href="#">
                       <img src="css/images/temp/avatar5.jpg" alt="" />
                     </a>
                   </li><!-- /.person6 -->
-
                   <li class="person7">
                     <a href="#">
                       <img src="css/images/temp/avatar6.jpg" alt="" />
                     </a>
                   </li><!-- /.person7 -->
-
                   <li class="person8">
                     <a href="#">
                       <img src="css/images/temp/avatar7.jpg" alt="" />
@@ -127,12 +120,12 @@
             </div><!-- /.section-body -->
 
             <div class="section-foot">
-              <button type="submit" name="submit" class="btn-green btn-large">
-                Next
-
+              <span id="sendRecipe" class="btn-green btn-large">
+                Upload
                 <i class="ico-next"></i>
-              </button>
+              </span>
             </div><!-- /.section-foot -->
+          </div><!-- /.section-friends -->
 
 
 
@@ -142,45 +135,44 @@
 
 
 
-
-            <div data-role="content">
-              <ul data-role="listview" data-inset="true" data-split-icon="gear">
-                <li><a href="#">All</a> <a href="#" data-charmid="5" class="js-pr-charm"></a></li>
-                <li><a href="#">1</a> <a href="#" data-charmid="0" class="js-pr-charm"></a></li>
-                <li><a href="#">2</a> <a href="#" data-charmid="1" class="js-pr-charm"></a></li>
-                <li><a href="#">3</a> <a href="#" data-charmid="2" class="js-pr-charm"></a></li>
-                <li><a href="#">4</a> <a href="#" data-charmid="3" class="js-pr-charm"></a></li>
-                <li><a href="#">5</a> <a href="#" data-charmid="4" class="js-pr-charm"></a></li>
-              </ul>
-            </div>
-            <button class="js-finished">Finished</button>
-          </div>
-          <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
-            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
-            <div style="padding:10px 20px;">
-              <label for="prColor" class="ui-hidden-accessible">Color:</label>
-              <select id="prColor" class="dropdown">
-                <option value="0">White</option>
-                <option value="1">Red</option>
-                <option value="2">Green</option>
-                <option value="3">Dark Blue</option>
-                <option value="4">Light Blue</option>
-                <option value="5">Yellow</option>
-                <option value="6">Purple</option>
-                <option value="7">Pink</option>
-              </select>
-              <label for="prEffect" class="ui-hidden-accessible">Effect:</label>
-              <select id="prEffect" class="dropdown">
-                <option value="0">Off</option>
-                <option value="1">On</option>
-                <option value="2">Blink Fast</option>
-                <option value="3">Blink Slow</option>
-                <option value="4">Loop</option>
-              </select>
-              <span>Glow:</span>
-              <input type="range" id="prGlow" value="100" min="0" max="255" step="10">
-              <button id="sendRecipe" data-icon="check">Save</button>
-            </div>
+            <!--<div data-role="content">-->
+              <!--<ul data-role="listview" data-inset="true" data-split-icon="gear">-->
+                <!--<li><a href="#">All</a> <a href="#" data-charmid="5" class="js-pr-charm"></a></li>-->
+                <!--<li><a href="#">1</a> <a href="#" data-charmid="0" class="js-pr-charm"></a></li>-->
+                <!--<li><a href="#">2</a> <a href="#" data-charmid="1" class="js-pr-charm"></a></li>-->
+                <!--<li><a href="#">3</a> <a href="#" data-charmid="2" class="js-pr-charm"></a></li>-->
+                <!--<li><a href="#">4</a> <a href="#" data-charmid="3" class="js-pr-charm"></a></li>-->
+                <!--<li><a href="#">5</a> <a href="#" data-charmid="4" class="js-pr-charm"></a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+            <!--<button class="js-finished">Finished</button>-->
+          <!--</div>-->
+          <!--<div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">-->
+            <!--<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>-->
+            <!--<div style="padding:10px 20px;">-->
+              <!--<label for="prColor" class="ui-hidden-accessible">Color:</label>-->
+              <!--<select id="prColor" class="dropdown">-->
+                <!--<option value="0">White</option>-->
+                <!--<option value="1">Red</option>-->
+                <!--<option value="2">Green</option>-->
+                <!--<option value="3">Dark Blue</option>-->
+                <!--<option value="4">Light Blue</option>-->
+                <!--<option value="5">Yellow</option>-->
+                <!--<option value="6">Purple</option>-->
+                <!--<option value="7">Pink</option>-->
+              <!--</select>-->
+              <!--<label for="prEffect" class="ui-hidden-accessible">Effect:</label>-->
+              <!--<select id="prEffect" class="dropdown">-->
+                <!--<option value="0">Off</option>-->
+                <!--<option value="1">On</option>-->
+                <!--<option value="2">Blink Fast</option>-->
+                <!--<option value="3">Blink Slow</option>-->
+                <!--<option value="4">Loop</option>-->
+              <!--</select>-->
+              <!--<span>Glow:</span>-->
+              <!--<input type="range" id="prGlow" value="100" min="0" max="255" step="10">-->
+              <!--<button id="sendRecipe" data-icon="check">Save</button>-->
+            <!--</div>-->
           </div>
 
           <div id="detailPage">
