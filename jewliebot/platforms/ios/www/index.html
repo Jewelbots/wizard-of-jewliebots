@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700"  />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="lib/jquery/jquery.mobile-1.4.5.min.css" />
+
+    <script type="text/javascript" src="lib/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="lib/handlebars-v2.0.0.js"></script>
+
+    <title>Jewlie Bots</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <a href="#" class="back"></a>
+        <a href="#" class="logo"></a>
+        <a href="#" class="bars"></a>
+      </header><!-- /.header -->
+
+      <div class="main">
+        <!--TODO: wire up header templates-->
+        <div id="mainHeader" class="main-head cf">
+          <div id="recipeHeader">
+            <h2>Make a recipe:</h2>
+            <p>IF...</p>
+            <div class="main-head-inner">
+              <span id="recipeHeaderText" class="btn-green"></span>
+            </div><!-- /.main-head-inner -->
+          </div>
+          <div id="proximityRecipeHeader">
+          <h2>Make a recipe:</h2>
+            <p>IF...</p>
+            <div class="main-head-inner">
+              <span id="nearName" class="btn-green">I Am Near...</span>
+            </div><!-- /.main-head-inner -->
+          </div>
+          <div id="generalHeader">
+            <h2 id="generalHeaderText"></h2>
+          </div>
+        </div><!-- /.main-head -->
+
+        <div id="mainBody" class="main-body">
+          <!-- things go here -->
+          <div id="mainPage">
+            <!--first page where you choose device-->
+            <ul id="deviceList">
+            </ul>
+            <button id="refreshButton">Refresh</button>
+          </div>
+
+          <div id="wizardPageOne">
+            <!--page you get when you choose device-->
+            <button id="makeRecipeButton">Make a recipe &gt;</button>
+            <button id="detailPageButton">Set some lights &gt;</button>
+          </div>
+
+          <div id="proximityRecipeFriendPage" class="section-friends">
+            <!--page where you choose a friend-->
+            <div class="section-head cf">
+              <p><span id="friendCount">8</span> friends</p>
+            </div><!-- /.section-head -->
+            <div id="prFriendList" class="section-body">
+              <!--friend list template renders here-->
+            </div><!-- /.section-body -->
+          </div><!-- /.section-friends -->
+
+          <div id="proximityRecipeSet" class="section-friends">
+            <!--page where you choose charm settings for friend-->
+            <p><strong>Select Charm(s)</strong></p>
+            <div class="section-body">
+              <div class="charm">
+                <ul class="people">
+                  <li class="person1 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar1.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person1 -->
+                  <li class="person2 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar2.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person2 -->
+                  <li class="person3 js-pr-charm">
+                    <a href="#" class="add-new">
+                      +
+                    </a>
+                  </li><!-- /.person3 -->
+                  <li class="person4 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar3.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person4 -->
+                  <li class="person5 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar4.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person5 -->
+                  <li class="person6 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar5.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person6 -->
+                  <li class="person7 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar6.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person7 -->
+                  <li class="person8 js-pr-charm">
+                    <a href="#" class="add-new">
+                      <!--<img src="css/images/temp/avatar7.jpg" alt="" />-->
+                      +
+                    </a>
+                  </li><!-- /.person8 -->
+                </ul><!-- /.list-people -->
+
+                <a href="#" class="charm-button js-pr-charm">
+                </a>
+              </div><!-- /.charm -->
+            </div><!-- /.section-body -->
+
+            <div class="section-foot">
+              <span id="uploadRecipe" class="btn-green btn-large">
+                Upload
+                <i class="ico-next"></i>
+              </span>
+            </div><!-- /.section-foot -->
+          </div><!-- /.section-friends -->
+          <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
+            <!--popup for charm set-->
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <div style="padding:10px 20px;">
+              <h3>Edit Charm</h3>
+              <br>
+              <hr>
+              <br>
+              <label class="ui-hidden-accessible">Color:</label>
+              <div>
+                <div class="color-circle red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle dark-blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              </div>
+              <div style="padding-top: 10px">
+                <div class="color-circle light-blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle yellow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle pink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              </div>
+              <br>
+              <hr>
+              <!--<select id="prColor" class="dropdown">-->
+                <!--<option value="0">White</option>-->
+                <!--<option value="1">Red</option>-->
+                <!--<option value="2">Green</option>-->
+                <!--<option value="3">Dark Blue</option>-->
+                <!--<option value="4">Light Blue</option>-->
+                <!--<option value="5">Yellow</option>-->
+                <!--<option value="6">Purple</option>-->
+                <!--<option value="7">Pink</option>-->
+              <!--</select>-->
+              <br>
+              <p>Effect:</p>
+              <select id="prEffect" class="dropdown">
+                <option value="0">Off</option>
+                <option value="1">On</option>
+                <option value="2">Blink Fast</option>
+                <option value="3">Blink Slow</option>
+                <option value="4">Loop</option>
+              </select>
+              <hr>
+              <br>
+              <span>Glow:</span>
+              <input type="range" id="prGlow" value="100" min="0" max="255" step="10">
+              <hr>
+              <br>
+              <div style="text-align: center;"><span id="saveRecipe" class="btn-green">Save</span></div>
+            </div>
+          </div>
+
+          <div id="detailPage">
+            <p class="label">Which Led?</p>
+            <select id="LED" class="dropdown">
+              <option value="5">All</option>
+              <option value="0">1</option>
+              <option value="1">2</option>
+              <option value="2">3</option>
+              <option value="3">4</option>
+              <option value="4">5</option>
+            </select>
+
+            <p class="label">Which Color?</p>
+            <select id="color" class="dropdown">
+              <option value="0">White</option>
+              <option value="1">Red</option>
+              <option value="2">Green</option>
+              <option value="3">Dark Blue</option>
+              <option value="4">Light Blue</option>
+              <option value="5">Yellow</option>
+              <option value="6">Purple</option>
+              <option value="7">Pink</option>
+            </select>
+
+            <p class="label">Which Pattern?</p>
+            <select id="mode" class="dropdown">
+              <option value="0">Off</option>
+              <option value="1">On</option>
+              <option value="2">Blink Fast</option>
+              <option value="3">Blink Slow</option>
+              <option value="4">Loop</option>
+            </select>
+            <p class="label">Brightness <span id="bright">100</span></p>
+            <button id="brightUP" class="brightness">+</button>
+            <button id="brightDOWN" class="brightness">-</button>
+            <button id="sendButton">Send</button>
+            <button id="finishButton">Finish</button>
+          </div>
+        </div>
+
+
+
+
+
+
+        </div><!-- /.main-body -->
+      </div><!-- /.main -->
+    </div><!-- /.wrapper -->
+
+    <script id="friend-list-tpl" type="text/template">
+      <ul class="list-friends cf">
+        {{#each this}}
+        <li>
+          <label>
+            <img class="js-proximity-friend" data-name="{{ name }}" data-deviceid="{{ deviceId }}" src="{{ avatar }}" alt="" />
+          </label>
+          <p>{{ name }}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+      window.onerror = function(message, url, lineNumber) {
+        console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+      }
+      app.initialize();
+    </script>
+  </body>
+</html>

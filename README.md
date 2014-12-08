@@ -1,6 +1,6 @@
 # Wizard of Jewliebots
 
-##Application lives in the Prototype1 Folder
+##Application lives in the jewliebot folder
 
 
 
@@ -16,6 +16,10 @@ Create the iOS project
 Install the rfduino plugin
 
     $ cordova plugin add com.megster.cordova.rfduino
+
+Install the console plugin for xcode debug
+
+    $ cordova plugin add org.apache.cordova.console
     
 Use Xcode to install the application on your iOS device
 
