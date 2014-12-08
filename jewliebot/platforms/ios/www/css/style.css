@@ -237,7 +237,7 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 .charm .people { list-style: none outside none; }
 .charm li { width: 41px; height: 41px; position: absolute; left: 50%; }
 .charm li a { height: 41px; display: block; border: 3px solid #fff; background-color: #0fb18f; border-radius: 50%; }
-.charm li a.add-new { font-size: 38px; line-height: 33px; color: #fff; text-align: center; font-weight: 600; border-color: #0fb18f; }
+.charm li a.add-new { font-size: 38px; line-height: 33px; color: #fff; text-align: center; font-weight: 600; border-color: #0fb18f; text-decoration: none; }
 .charm li img { width: 35px; height: 35px; display: block; border-radius: 50%; }
 .charm .person1 { top: 20px; margin-left: -20px; }
 .charm .person2 { top: 53px; margin-left: 58px; }

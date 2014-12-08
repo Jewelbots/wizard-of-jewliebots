@@ -49,16 +49,17 @@ var friends = [
 
 var app = {
   initialize: function() {
+      app.showHome();
       this.bindEvents();
-      this.showHome();
+      console.log("guh");
   },
 
   bindEvents: function() {
-      document.addEventListener('deviceready', this.onDeviceReady, false);
+      //uncomment when using device
+      //document.addEventListener('deviceready', this.onDeviceReady, false);
       refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
       sendButton.addEventListener('touchstart', this.onData);
       deviceList.addEventListener('touchstart', this.connect, false); // assume not scrolling
-      app.bindProximityRecipePopup();
 
       $('.js-finished').on('touchstart', function() {
         app.showHome();
@@ -67,7 +68,7 @@ var app = {
       $('.back').on('touchstart', function() {
         app.showHome();
       });
-
+      console.log("wut");
   },
 
   onDeviceReady: function() {
@@ -170,6 +171,7 @@ var app = {
   },
 
   showHome: function() {
+    console.log("hi");
     app.hideAll();
     //UNCOMMENT WHEN LIVE
     //this.showPage(mainPage);
@@ -215,6 +217,7 @@ var app = {
       $('#nearName').data("deviceid", $(this).data("deviceid"));
       app.showPage(proximityRecipeSet);
       app.showHeader(proximityRecipeHeader, "I Am Near " + $(this).data("name"), "#nearName");
+      app.bindProximityRecipePopup();
     });
   },
 
@@ -229,7 +232,10 @@ var app = {
       $(this).removeData('data-charmid');
     });
     //bind send on popup
-    sendRecipe.addEventListener("touchstart", app.sendProximityRecipe);
+    //$("#saveRecipe").on("touchstart", app.sendProximityRecipe);
+    $("#saveRecipe").on("touchstart", function() {
+      $('#prCharmSetPopup').popup('close');
+    });
   }
 };
 
