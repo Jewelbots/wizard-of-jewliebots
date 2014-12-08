@@ -162,18 +162,37 @@
           <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
             <div style="padding:10px 20px;">
-              <label for="prColor" class="ui-hidden-accessible">Color:</label>
-              <select id="prColor" class="dropdown">
-                <option value="0">White</option>
-                <option value="1">Red</option>
-                <option value="2">Green</option>
-                <option value="3">Dark Blue</option>
-                <option value="4">Light Blue</option>
-                <option value="5">Yellow</option>
-                <option value="6">Purple</option>
-                <option value="7">Pink</option>
-              </select>
-              <label for="prEffect" class="ui-hidden-accessible">Effect:</label>
+              <h3>Edit Charm</h3>
+              <br>
+              <hr>
+              <br>
+              <label class="ui-hidden-accessible">Color:</label>
+              <div>
+                <div class="color-circle red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle dark-blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              </div>
+              <div style="padding-top: 10px">
+                <div class="color-circle light-blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle yellow">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="color-circle pink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              </div>
+              <br>
+              <hr>
+              <!--<select id="prColor" class="dropdown">-->
+                <!--<option value="0">White</option>-->
+                <!--<option value="1">Red</option>-->
+                <!--<option value="2">Green</option>-->
+                <!--<option value="3">Dark Blue</option>-->
+                <!--<option value="4">Light Blue</option>-->
+                <!--<option value="5">Yellow</option>-->
+                <!--<option value="6">Purple</option>-->
+                <!--<option value="7">Pink</option>-->
+              <!--</select>-->
+              <br>
+              <p>Effect:</p>
               <select id="prEffect" class="dropdown">
                 <option value="0">Off</option>
                 <option value="1">On</option>
@@ -181,9 +200,13 @@
                 <option value="3">Blink Slow</option>
                 <option value="4">Loop</option>
               </select>
+              <hr>
+              <br>
               <span>Glow:</span>
               <input type="range" id="prGlow" value="100" min="0" max="255" step="10">
-              <button id="saveRecipe" data-icon="check">Save</button>
+              <hr>
+              <br>
+              <div style="text-align: center;"><span id="saveRecipe" class="btn-green">Save</span></div>
             </div>
           </div>
 

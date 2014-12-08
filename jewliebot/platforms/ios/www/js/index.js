@@ -231,6 +231,10 @@ var app = {
       $(this).removeAttr('data-charmid');
       $(this).removeData('data-charmid');
     });
+    $('.color-circle').on('touchstart', function() {
+      $('.color-circle').removeClass('selected');
+      $(this).addClass('selected');
+    });
     //bind send on popup
     //$("#saveRecipe").on("touchstart", app.sendProximityRecipe);
     $("#saveRecipe").on("touchstart", function() {

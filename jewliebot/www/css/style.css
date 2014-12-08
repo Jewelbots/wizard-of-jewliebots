@@ -1,43 +1,43 @@
 /* ==========================================================================
-	#Reset
+  #Reset
 ========================================================================== */
 
 * { margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: transparent; }
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 /* ==========================================================================
-	#Global
+  #Global
 ========================================================================== */
 
 body,
 html { height: 100%; }
 
 body {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-	font-size: 12px;
-	line-height: 1.33;
-	color: #333;
-	font-weight: 400; 
-	font-style: normal; 
-	text-transform: none; 
-	text-decoration: none; 
-	text-shadow: none; 
-	letter-spacing: 0;
-	word-spacing: 0;
-	text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: #fff;
-	min-width: 100%;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-size: 12px;
+  line-height: 1.33;
+  color: #333;
+  font-weight: 400; 
+  font-style: normal; 
+  text-transform: none; 
+  text-decoration: none; 
+  text-shadow: none; 
+  letter-spacing: 0;
+  word-spacing: 0;
+  text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  min-width: 100%;
 }
 
 a { color: #0fb48c; text-decoration: none; }
@@ -95,7 +95,7 @@ nav ul,
 table { width: 100%; border-collapse: collapse; border-spacing: 0; }
 
 /* ==========================================================================
-	#Form Elements
+  #Form Elements
 ========================================================================== */
 
 ::-webkit-input-placeholder { color: #a2a2a2; opacity: 1; }
@@ -133,7 +133,7 @@ input[type="checkbox"] { width: auto; height: auto; padding: 0; border: 0; }
 textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolling: touch; }
 
 /* ==========================================================================
-	#Helpers
+  #Helpers
 ========================================================================== */
 
 .notext,
@@ -148,7 +148,7 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 .cf:after { clear: both; }
 
 /* ==========================================================================
-	#Buttons & Icons
+  #Buttons & Icons
 ========================================================================== */
 
 [class^="btn-"],
@@ -162,11 +162,11 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 [class^="btn-"]:focus { outline: 0; }
 [class^="btn-"] [class^="ico-"] { position: absolute; top: 50%; right: 20px; }
 [class^="btn-"] [class^="ico-"] {
-	transform: translateY(-50%); 
-	-webkit-transform: translateY(-50%); 
-	-moz-transform: translateY(-50%); 
-	-o-transform: translateY(-50%); 
-	-ms-transform: translateY(-50%); 
+  transform: translateY(-50%); 
+  -webkit-transform: translateY(-50%); 
+  -moz-transform: translateY(-50%); 
+  -o-transform: translateY(-50%); 
+  -ms-transform: translateY(-50%); 
 }
 
 .btn-green { background-color: #0fb48c; }
@@ -185,7 +185,7 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 .ico-next { width: 13px; height: 11px; background-image: url(images/ico-forward.png); }
 
 /* ==========================================================================
-	#Pages Styles
+  #Pages Styles
 ========================================================================== */
 
 .header { padding: 7px 0; position: relative; z-index: 10; }
@@ -218,11 +218,11 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 .list-friends { font-size: 10px; line-height: 20px; color: #262626; text-align: center; text-transform: uppercase; }
 .list-friends li { width: 33.33%; float: left; padding-bottom: 25px; }
 .list-friends li {
-	width: calc(100% / 3); 
-	width: -webkit-calc(100% / 3); 
-	width: -moz-calc(100% / 3); 
-	width: -o-calc(100% / 3); 
-	width: -ms-calc(100% / 3); 
+  width: calc(100% / 3); 
+  width: -webkit-calc(100% / 3); 
+  width: -moz-calc(100% / 3); 
+  width: -o-calc(100% / 3); 
+  width: -ms-calc(100% / 3); 
 }
 .list-friends label { display: block; position: relative; overflow: hidden; padding-bottom: 5px; }
 .list-friends label img { width: 70px; height: 70px; display: block; margin: 0 auto; border-radius: 50%; }
@@ -250,7 +250,7 @@ textarea { height: 100px; overflow: auto; resize: none; -webkit-overflow-scrolli
 .charm-button { width: 80px; height: 80px; display: block; position: absolute; top: 50%; left: 50%; border: 5px solid #fff; margin: -40px 0 0 -40px; background-color: #f9b474; border-radius: 50%; }
 
 /* ==========================================================================
-	#CSS3 Animations, Transforms and Transitions
+  #CSS3 Animations, Transforms and Transitions
 ========================================================================== */
 
 a,
@@ -258,9 +258,35 @@ button,
 input,
 textarea,
 .btn { 
-	transition: color .5s, background-color .5s, border-color .5s; 
-	-webkit-transition: color .5s, background-color .5s, border-color .5s; 
-	-moz-transition: color .5s, background-color .5s, border-color .5s; 
-	-o-transition: color .5s, background-color .5s, border-color .5s; 
-	-ms-transition: color .5s, background-color .5s, border-color .5s; 
+  transition: color .5s, background-color .5s, border-color .5s; 
+  -webkit-transition: color .5s, background-color .5s, border-color .5s; 
+  -moz-transition: color .5s, background-color .5s, border-color .5s; 
+  -o-transition: color .5s, background-color .5s, border-color .5s; 
+  -ms-transition: color .5s, background-color .5s, border-color .5s; 
 }
+
+.color-circle {
+  width: 60px;
+  height: 60px;
+  min-height: 60px;
+  min-width: 60px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  display: inline;
+  border-style: solid; border-width: 1px; border-color: lightgrey;
+}
+
+.red { background: red; color: red; border-color: red; }
+.white { background: white; color: white; }
+.green { background: green; color: green; border-color: green; }
+.dark-blue { background: darkblue; color: darkblue; border-color: darkblue; }
+.light-blue { background: lightblue; color: lightblue; border-color: lightblue; }
+.yellow { background: yellow; color: yellow; border-color: yellow; }
+.purple { background: purple; color: purple; border-color: purple; }
+.pink { background: pink; color: pink; border-color: pink; }
+
+.selected {
+  border-color: orange;
+}
+
