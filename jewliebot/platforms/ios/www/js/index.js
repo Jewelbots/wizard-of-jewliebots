@@ -50,8 +50,7 @@ var friends = [
 var app = {
   initialize: function() {
       this.bindEvents();
-      this.showPage(mainPage);
-      app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+      this.showHome();
   },
 
   bindEvents: function() {
@@ -62,13 +61,11 @@ var app = {
       app.bindProximityRecipePopup();
 
       $('.js-finished').on('touchstart', function() {
-        app.showPage(mainPage);
-        app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+        app.showHome();
       });
 
       $('.back').on('touchstart', function() {
-        app.showPage(mainPage);
-        app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+        app.showHome();
       });
 
   },
@@ -163,14 +160,23 @@ var app = {
     //it's throwing a lot of errors with null reason that don't really appear to be errors?
     if(reason !== null) {
       alert(reason);
-      app.showPage(mainPage);
-      app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+      app.showHome();
     }
   },
 
   writeSuccess: function(reason){
     alert("you've sent info " + reason);
     //can use this to debog if you are having trouble sending
+  },
+
+  showHome: function() {
+    //UNCOMMENT WHEN LIVE
+    //this.showPage(mainPage);
+    //app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
+
+    //SKIPPING CONNECTIONS STEP FOR DEMO
+    app.showPage(wizardPageOne);
+    app.showHeader(generalHeader, "I want to...", "#generalHeaderText");
   },
 
   showHeader: function(headerName, text, control) {
