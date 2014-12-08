@@ -54,12 +54,15 @@
             </ul>
             <button id="refreshButton">Refresh</button>
           </div>
+
           <div id="wizardPageOne">
             <!--page you get when you choose device-->
             <button id="makeRecipeButton">Make a recipe &gt;</button>
             <button id="detailPageButton">Set some lights &gt;</button>
           </div>
+
           <div id="proximityRecipeFriendPage" class="section-friends">
+            <!--page where you choose a friend-->
             <div class="section-head cf">
               <p><span id="friendCount">8</span> friends</p>
             </div><!-- /.section-head -->
@@ -69,46 +72,47 @@
           </div><!-- /.section-friends -->
 
           <div id="proximityRecipeSet" class="section-friends">
+            <!--page where you choose charm settings for friend-->
             <p><strong>Select Charm(s)</strong></p>
             <div class="section-body">
               <div class="charm">
                 <ul class="people">
-                  <li class="person1">
+                  <li class="person1 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar1.jpg" alt="" />
                     </a>
                   </li><!-- /.person1 -->
-                  <li class="person2">
+                  <li class="person2 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar2.jpg" alt="" />
                     </a>
                   </li><!-- /.person2 -->
-                  <li class="person3">
+                  <li class="person3 js-pr-charm">
                     <a href="#" class="add-new">
                       +
                     </a>
                   </li><!-- /.person3 -->
-                  <li class="person4">
+                  <li class="person4 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar3.jpg" alt="" />
                     </a>
                   </li><!-- /.person4 -->
-                  <li class="person5">
+                  <li class="person5 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar4.jpg" alt="" />
                     </a>
                   </li><!-- /.person5 -->
-                  <li class="person6">
+                  <li class="person6 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar5.jpg" alt="" />
                     </a>
                   </li><!-- /.person6 -->
-                  <li class="person7">
+                  <li class="person7 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar6.jpg" alt="" />
                     </a>
                   </li><!-- /.person7 -->
-                  <li class="person8">
+                  <li class="person8 js-pr-charm">
                     <a href="#">
                       <img src="css/images/temp/avatar7.jpg" alt="" />
                     </a>
@@ -147,32 +151,32 @@
             <!--</div>-->
             <!--<button class="js-finished">Finished</button>-->
           <!--</div>-->
-          <!--<div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">-->
-            <!--<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>-->
-            <!--<div style="padding:10px 20px;">-->
-              <!--<label for="prColor" class="ui-hidden-accessible">Color:</label>-->
-              <!--<select id="prColor" class="dropdown">-->
-                <!--<option value="0">White</option>-->
-                <!--<option value="1">Red</option>-->
-                <!--<option value="2">Green</option>-->
-                <!--<option value="3">Dark Blue</option>-->
-                <!--<option value="4">Light Blue</option>-->
-                <!--<option value="5">Yellow</option>-->
-                <!--<option value="6">Purple</option>-->
-                <!--<option value="7">Pink</option>-->
-              <!--</select>-->
-              <!--<label for="prEffect" class="ui-hidden-accessible">Effect:</label>-->
-              <!--<select id="prEffect" class="dropdown">-->
-                <!--<option value="0">Off</option>-->
-                <!--<option value="1">On</option>-->
-                <!--<option value="2">Blink Fast</option>-->
-                <!--<option value="3">Blink Slow</option>-->
-                <!--<option value="4">Loop</option>-->
-              <!--</select>-->
-              <!--<span>Glow:</span>-->
-              <!--<input type="range" id="prGlow" value="100" min="0" max="255" step="10">-->
-              <!--<button id="sendRecipe" data-icon="check">Save</button>-->
-            <!--</div>-->
+          <div data-role="popup" id="prCharmSetPopup" class="ui-corner-all ui-content">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <div style="padding:10px 20px;">
+              <label for="prColor" class="ui-hidden-accessible">Color:</label>
+              <select id="prColor" class="dropdown">
+                <option value="0">White</option>
+                <option value="1">Red</option>
+                <option value="2">Green</option>
+                <option value="3">Dark Blue</option>
+                <option value="4">Light Blue</option>
+                <option value="5">Yellow</option>
+                <option value="6">Purple</option>
+                <option value="7">Pink</option>
+              </select>
+              <label for="prEffect" class="ui-hidden-accessible">Effect:</label>
+              <select id="prEffect" class="dropdown">
+                <option value="0">Off</option>
+                <option value="1">On</option>
+                <option value="2">Blink Fast</option>
+                <option value="3">Blink Slow</option>
+                <option value="4">Loop</option>
+              </select>
+              <span>Glow:</span>
+              <input type="range" id="prGlow" value="100" min="0" max="255" step="10">
+              <button id="sendRecipe" data-icon="check">Save</button>
+            </div>
           </div>
 
           <div id="detailPage">

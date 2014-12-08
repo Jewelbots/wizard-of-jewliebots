@@ -170,6 +170,7 @@ var app = {
   },
 
   showHome: function() {
+    app.hideAll();
     //UNCOMMENT WHEN LIVE
     //this.showPage(mainPage);
     //app.showHeader(generalHeader, "Connect to Bracelet", "#generalHeaderText");
