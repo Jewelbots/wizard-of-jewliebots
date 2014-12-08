@@ -51,7 +51,6 @@ var app = {
   initialize: function() {
       app.showHome();
       this.bindEvents();
-      console.log("guh");
   },
 
   bindEvents: function() {
@@ -68,7 +67,6 @@ var app = {
       $('.back').on('touchstart', function() {
         app.showHome();
       });
-      console.log("wut");
   },
 
   onDeviceReady: function() {
@@ -242,6 +240,11 @@ var app = {
     });
   }
 };
+
+uploadRecipe.addEventListener('touchstart', function() {
+  //this will send but for demo just go home
+  app.showHome();
+});
 
 makeRecipeButton.addEventListener("touchstart", function() {
   console.log(friends);
